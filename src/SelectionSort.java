@@ -26,6 +26,12 @@ public class SelectionSort {
     }
 
     public void sort(){
-        
+        Dates toTheFront = findSmallest();
+        ArrayList<Dates> temp = dates;
+        for(int i = 0; i < dates.size(); i++){
+            temp.set(i, findSmallest());
+            dates.remove(findSmallest());
+        }
+        dates = temp;
     }
 }
